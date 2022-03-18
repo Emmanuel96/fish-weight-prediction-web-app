@@ -1,14 +1,14 @@
-# Title: Fish Weight Predictor 
+# Fish Weight Predictor 
 
-# Description
+## Description
 Flask application that uses a saved random forest model to predict the weight of a fish using its lengths, width and height
 The predictor is a Random forest model 
 
-# Requirements: 
+## Requirements: 
     Python >= 2
     
-# Installation: 
+## Installation: 
     Step 1 and only step invovled: Just open this on your IDE and run it
     
-# Link to online version: 
+## Link to online version: https://fish-weight-predictor.herokuapp.com
     
