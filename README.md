@@ -10,5 +10,5 @@ The predictor is a Random forest model
 ## Installation: 
     Step 1 and only step invovled: Just open this on your IDE and run it
     
-## Link to online version: https://fish-weight-predictor.herokuapp.com
+## Link to online version: https://fish-weight-predictor-app.herokuapp.com/
     
