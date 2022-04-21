@@ -8,33 +8,25 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Fish Weight Prediction!</title>
+    <title>Bitcoin Price Prediction!</title>
   </head>
   <body>
     <div class = "container p-5 mt-5 d-flex justify-content-center align-items-center">
 
     <form id = "myForm" class="row g-3 w-50">
-        <h1>Fish Weight Prediction</h1>
+        <h1>Bitcoin Price Prediction</h1>
         
         <div class="col-md-12">
-          <label class="form-label">Length1</label>
-          <input type="number" class="form-control"  name="Length1" step = "0.01"  placeholder="1" required>
+          <label class="form-label">Day</label>
+          <input type="number" class="form-control"  id="day" step = "1"  placeholder="1" required>
         </div>
         <div class="col-12">
-          <label class="form-label">Length2</label>
-          <input type="number" name="Length2" class="form-control" step = "0.01"   placeholder="1" required>
+          <label class="form-label">Month</label>
+          <input type="number" id="month" class="form-control" step = "1"   placeholder="1" required>
         </div>
         <div class="col-12">
-          <label class="form-label">Length3</label>
-          <input type="number" class="form-control" name="Length3" step = "0.01"  placeholder="1" required>
-        </div>
-        <div class="col-md-12">
-          <label class="form-label">Height</label>
-          <input type="number" class="form-control" name="Height" step = "0.01"  placeholder = "2" required>
-        </div>
-        <div class="col-md-12">
-          <label class="form-label">Width</label>
-          <input type="number" name="Width" class="form-control" placeholder= "0.1" step = "0.01" required/>
+          <label class="form-label">Year</label>
+          <input type="number" class="form-control" id="year" step = "1"  placeholder="1" required>
         </div>
        <div class="col-md-12">
           <input type="submit" class="btn btn-primary" value="Predict" />
@@ -53,6 +45,34 @@
     <script>
         $('#myForm').on('submit', (event)=>{
             event.preventDefault(); 
+            
+            let year = document.getElementById('year').value; 
+            if(year < 2008){
+              Swal.fire({
+              icon: 'info',
+                  text: "Enter a year after 2008"
+                })
+                return;
+            }
+            
+            let month = document.getElementById('month').value; 
+
+            if(month < 1 || month > 12){
+              Swal.fire({
+              icon: 'info',
+                  text: "Enter a valid month"
+                })
+                return;
+            }
+            
+            let day = document.getElementById('day').value; 
+            if(day < 1 || day > 31){
+              Swal.fire({
+              icon: 'info',
+                  text: "Enter a valid day"
+                })
+                return;
+            }
             
             const form = document.getElementById('myForm')
             
